@@ -106,3 +106,39 @@ function getAllEmployees() {
         }
     });
 }
+
+// Wait until the HTML document is fully loaded
+$(document).ready(function () {
+
+    // When a table row (tr) inside #empTable is clicked
+    $('#empTable').on('click', 'tr', function () {
+
+        // 'this' refers to the clicked table row
+
+        // Get text from the 1st column (Employee ID)
+        let col0 = $(this).find('td:eq(0)').text();
+
+        // Get text from the 2nd column (Employee Name)
+        let col1 = $(this).find('td:eq(1)').text();
+
+        // Get text from the 3rd column (Employee Address)
+        let col2 = $(this).find('td:eq(2)').text();
+
+        // Get text from the 4th column (Employee Phone Number)
+        let col3 = $(this).find('td:eq(3)').text();
+
+        // Set Employee ID into input field
+        $('#exampleFormControlInput1').val(col0);
+
+        // Set Employee Name into input field
+        $('#exampleFormControlInput2').val(col1);
+
+        // Set Employee Address into input field
+        $('#exampleFormControlInput3').val(col2);
+
+        // Set Employee Phone Number into input field
+        $('#exampleFormControlInput4').val(col3);
+
+    });
+
+});
