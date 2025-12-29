@@ -66,7 +66,7 @@ function deleteEmployee() {
     $.ajax({
         method: "DELETE",
         contentType: "application/json",
-        url: "http://localhost:8080/api/v1/employee/deleteemployee/" + empId,
+        url: "http://localhost:8080/api/v1/employee/deleteEmployee/" + empId,
         async: true,
         success: function (data) {
             alert("deleted successfully");
