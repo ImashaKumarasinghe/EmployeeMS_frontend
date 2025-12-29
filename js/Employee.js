@@ -1,6 +1,6 @@
 // to write all functions
 
-getAllEmployee();
+getAllEmployees();
 
 function saveEmployee() {
     let name = $('#exampleFormControlInput2').val();
@@ -20,7 +20,7 @@ function saveEmployee() {
         }),
         success: function (data) {
             alert("saved");
-            getAllEmployee();
+            getAllEmployees();
         },
         error: function (xhr, exception) {
             alert("Error");
@@ -49,7 +49,7 @@ function updateEmployee() {
         }),
         success: function (data) {
             alert("updated successfully");
-            getAllEmployee();
+            getAllEmployees();
         },
         error: function (xhr, exception) {
             alert("Error");
@@ -70,7 +70,7 @@ function deleteEmployee() {
         async: true,
         success: function (data) {
             alert("deleted successfully");
-            getAllEmployee();
+            getAllEmployees();
         },
         error: function (xhr, exception) {
             alert("Error");
@@ -80,11 +80,11 @@ function deleteEmployee() {
 
 /* get all function */
 
-function getAllEmployee() {
+function getAllEmployees() {
     $.ajax({
         method: "GET",
         contentType: "application/json",
-        url: "http://localhost:8080/api/v1/employee/getAllemployees",
+        url: "http://localhost:8080/api/v1/employee/getAllEmployees",
         async: true,
         success: function (data) {
             if (data.code === "00") {
@@ -95,12 +95,7 @@ function getAllEmployee() {
                     let address = emp.empAddress;
                     let number = emp.empMNumber;
 
-                    var row = `<tr>
-                        <td>${empId}</td>
-                        <td>${name}</td>
-                        <td>${address}</td>
-                        <td>${number}</td>
-                    </tr>`;
+                    var row = `<tr><td>${empId}</td><td>${name}</td><td>${address}</td><td>${number}</td></tr>`;
 
                     $('#empTable').append(row);
                 }
