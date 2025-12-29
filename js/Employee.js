@@ -56,3 +56,23 @@ error:function(xhr,exception){
 alert("Error")
 }
 })
+
+/*delete function*/
+
+function deleteEmployee(){
+let empId=$('#exampleFormControlInput1').val();
+
+$.ajax({
+method:"DELETE",
+contentType:"application/json",
+url:"http://localhost:8080/api/v1/employee/deleteemployee/"+empId,
+async:true,
+success:function(data){
+alert("updated suceesfully")
+},
+error:function(xhr,exception){
+alert("Error")
+}
+})
+
+
