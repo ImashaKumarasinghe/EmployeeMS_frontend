@@ -1,7 +1,5 @@
 //to write all functions
 
-
-
 function saveEmployee(){
 let name=$('#exampleFormControlInput2').val();
 let address=$('#exampleFormControlInput3').val();
