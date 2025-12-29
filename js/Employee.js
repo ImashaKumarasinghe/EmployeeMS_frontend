@@ -1,5 +1,6 @@
 //to write all functions
 
+getAllEmployee()
 
 function saveEmployee(){
 let name=$('#exampleFormControlInput2').val();
@@ -21,6 +22,7 @@ data:JSON.stringify({
 }),
 success:function(data){
 alert("saved")
+getAllEmployee()
 },
 error:function(xhr,exception){
 alert("Error")
@@ -51,6 +53,7 @@ data:JSON.stringify({
 }),
 success:function(data){
 alert("updated suceesfully")
+getAllEmployee()
 },
 error:function(xhr,exception){
 alert("Error")
@@ -69,10 +72,43 @@ url:"http://localhost:8080/api/v1/employee/deleteemployee/"+empId,
 async:true,
 success:function(data){
 alert("updated suceesfully")
+getAllEmployee()
 },
 error:function(xhr,exception){
 alert("Error")
 }
 })
+
+/*get all function*/
+
+function getAllEmployee(){
+
+$.ajax({
+method:"GET",
+contentType:"application/json",
+url:"http://localhost:8080/api/v1/employee/getAllemployees",
+async:true,
+success:function(data){
+if(data.code==="00"){
+$('#empTable').empty();
+for(let emp of data.content){
+let empId=emp.empId
+let name=emp.empName
+let address=emp.empAddress
+let address=emp.empMNumber
+
+var row='<tr><td>${empId}</td><td>${name}</td><td>${address}</td><td>${address}</td></tr>';
+$('#empTable'.append(row))
+}
+}
+}
+}
+alert("updated suceesfully")
+},
+error:function(xhr,exception){
+alert("Error")
+}
+})
+
 
 
