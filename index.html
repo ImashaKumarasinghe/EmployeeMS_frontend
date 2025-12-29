@@ -26,11 +26,11 @@
         <label for="exampleFormControlInput4" class="form-label">Employee phone number</label>
         <input type="number" class="form-control" id="exampleFormControlInput4" placeholder="Employee phone number">
     </div>
-
+//create functions for buttons to write function in javascript
     <div>
-        <button type="button" class="btn btn-primary">Save</button>
-        <button type="button" class="btn btn-secondary">Update</button>
-        <button type="button" class="btn btn-success">Delete</button>
+        <button type="button" class="btn btn-primary">Save onclick="saveEmployee()"</button>
+        <button type="button" class="btn btn-secondary">Update onclick="updateEmployee()"</button>
+        <button type="button" class="btn btn-success">Delete onclick="deleteEmployee()"</button>
     </div>
 
     <br><br>
@@ -39,13 +39,13 @@
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Emp ID</th>
+                <th scope="col">Emp Name</th>
+                <th scope="col">Emp Address</th>
+                <th scope="col">Emp Phone Number</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="empTable">
 
             </tbody>
         </table>
