@@ -57,6 +57,7 @@ function updateEmployee() {
     });
 }
 
+
 /* delete function */
 
 function deleteEmployee() {
